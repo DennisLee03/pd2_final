@@ -71,4 +71,23 @@ public class Crawler {
 
         return mealDto;
     }
+
+    public static void setupContents(Map<String, CouponMealDto> map) {
+        try {
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(new FileInputStream("other/meals.csv"), "UTF-8"));
+            String line;
+            while ((line = br.readLine()) != null) {
+                String code = line.substring(0, 5);
+                CouponMealDto m = map.get(code);
+                if (m == null) {
+                    continue;
+                }
+                m.setContent(line.substring(6, line.length()));
+            }
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -13,4 +13,5 @@ public class CouponMeal {
     private String code;
     private Integer price;
     private String imgUrl;
+    private String content;
 }

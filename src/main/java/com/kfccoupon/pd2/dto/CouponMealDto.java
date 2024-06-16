@@ -14,6 +14,9 @@ public class CouponMealDto {
     @NotEmpty(message = "Image URL cannot be empty")
     private String imgUrl;
 
+    @NotEmpty(message = "Content cannot be empty")
+    private String content;
+
     // Getters and Setters
     public String getCode() {
         return code;
@@ -37,5 +40,13 @@ public class CouponMealDto {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

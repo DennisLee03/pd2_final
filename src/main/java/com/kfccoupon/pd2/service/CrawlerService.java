@@ -1,7 +1,6 @@
 package com.kfccoupon.pd2.service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,13 +19,21 @@ public class CrawlerService {
         List<CouponMealDto> mealDtos = new ArrayList<>();
         try {
             List<String> meal_urls_and_imgs = Crawler.setup_meal_url();
+            Map<String, CouponMealDto> map = new HashMap<>();
 
             // produce all meal instances
             for (String meal_url_img : meal_urls_and_imgs) {
                 String[] url = meal_url_img.split(",");
                 CouponMealDto mealDto = Crawler.setupMeal(url[0], url[1]);
                 mealDtos.add(mealDto);
-                CouponMeal meal = convertToEntity(mealDto);
+
+                map.put(mealDto.getCode(), mealDto);
+            }
+
+            Crawler.setupContents(map);
+
+            for (CouponMealDto dto : mealDtos) {
+                CouponMeal meal = convertToEntity(dto);
                 couponDao.save(meal);
             }
 
@@ -49,6 +56,7 @@ public class CrawlerService {
         meal.setCode(mealDto.getCode());
         meal.setImgUrl(mealDto.getImgUrl());
         meal.setPrice(mealDto.getPrice());
+        meal.setContent(mealDto.getContent());
 
         return meal;
     }
