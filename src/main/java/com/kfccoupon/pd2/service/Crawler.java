@@ -6,7 +6,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import com.kfccoupon.pd2.dto.CouponMealDto;
-import com.kfccoupon.pd2.model.CouponMeal;
 
 import java.io.*;
 import java.util.*;
