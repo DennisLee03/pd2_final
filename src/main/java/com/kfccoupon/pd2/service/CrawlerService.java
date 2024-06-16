@@ -34,6 +34,7 @@ public class CrawlerService {
             System.out.println("------");
             ioe.printStackTrace();
             System.out.println("------");
+
         }
         return null;
     }
