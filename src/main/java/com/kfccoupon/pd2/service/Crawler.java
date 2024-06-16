@@ -5,6 +5,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import com.kfccoupon.pd2.dto.CouponMealDto;
 import com.kfccoupon.pd2.model.CouponMeal;
 
 import java.io.*;
@@ -49,8 +50,9 @@ public class Crawler {
         return null;
     }
 
-    public static CouponMeal setupMeal(String url, String img_url) {
-        CouponMeal meal = new CouponMeal();
+    // data transfer
+    public static CouponMealDto setupMeal(String url, String img_url) {
+        CouponMealDto mealDto = new CouponMealDto();
 
         Document doc = null;
         try {
@@ -61,13 +63,13 @@ public class Crawler {
 
         Element price = doc.selectFirst("span.small-price");
         String price_str = price.text().substring(1).replaceAll(",", "");
-        meal.setPrice(Integer.parseInt(price_str));
+        mealDto.setPrice(Integer.parseInt(price_str));
 
         Element code = doc.selectFirst("h1.combo-flow__header-title.mealsTitle");
-        meal.setCode(code.text().replaceAll("[^0-9]", ""));
+        mealDto.setCode(code.text().replaceAll("[^0-9]", ""));
 
-        meal.setImgUrl(img_url);
+        mealDto.setImgUrl(img_url);
 
-        return meal;
+        return mealDto;
     }
 }

@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kfccoupon.pd2.model.CouponMeal;
+import com.kfccoupon.pd2.dto.CouponMealDto;
 import com.kfccoupon.pd2.service.CrawlerService;
 
 @RestController
@@ -17,8 +17,8 @@ public class MainController {
     CrawlerService crawlerService;
 
     @GetMapping("/scrape")
-    public ResponseEntity<List<CouponMeal>> scrapeData() {
-        List<CouponMeal> data = crawlerService.scrapeAndSaveData();
+    public ResponseEntity<List<CouponMealDto>> scrapeData() {
+        List<CouponMealDto> data = crawlerService.scrapeAndSaveData();
         return ResponseEntity.ok(data);
     }
 }
