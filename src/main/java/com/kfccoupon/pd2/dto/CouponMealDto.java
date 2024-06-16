@@ -47,6 +47,28 @@ public class CouponMealDto {
     }
 
     public void setContent(String content) {
-        this.content = content;
+        StringBuilder sb = new StringBuilder();
+
+        if (content.contains("蛋撻")) {
+            sb.append("D");
+        }
+
+        if (content.contains("QQ")) {
+            sb.append("Q");
+        }
+
+        if (content.contains("上校")) {
+            sb.append("J");
+        }
+
+        if (content.contains("麻脆雞") || content.contains("啦脆雞")) {
+            sb.append("C");
+        }
+
+        if (content.contains("大福")) {
+            sb.append("F");
+        }
+
+        this.content = sb.toString();
     }
 }
