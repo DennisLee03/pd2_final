@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:blanchedalmond;
+}
+
+.home_biggest_header {
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: #cc0707;
+    color: rgb(250, 251, 252);
+    padding: 40px;
+    font-family:'Roboto', sans-serif;
+    vertical-align:baseline;
+
+    display: flex;  
+    justify-content: left;  
+    align-items: center;  
+    height: 100px;
+}
+
+/* 按鈕容器樣式 */
+.button-container {
+    display: flex;
+    justify-content: center;  /* 將按鈕水平居中對齊 */
+    gap: 3px;  /* 設置按鈕之間的間距 */
+    padding: 5px;
+}
+
+/* 按鈕樣式 */
+.button-container button {
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family:'Roboto', sans-serif; 
+    white-space: nowrap;
+    flex: 1 1 auto;
+}
+
+/* 按鈕懸停效果 */
+.button-container button:hover {
+    background-color: #6d7781;
+}
+
+.button-container .caution-button:hover {
+    background-color: #f0021a;  /* 更深的紅色懸停背景 */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* 結果容器的樣式 */
+#result {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);  /* 設置每行有五個圖片 */
+    gap: 10px;  /* 設置圖片之間的間距 */
+    padding: 20px
+}
+
+#result img {
+    width: 100%;
+    height: auto;
+}

@@ -83,7 +83,7 @@ public class Crawler {
                 if (m == null) {
                     continue;
                 }
-                m.setContent(line.substring(6, line.length()));
+                m.setContent(line.substring(6, line.length()), true);
             }
             br.close();
         } catch (IOException e) {
