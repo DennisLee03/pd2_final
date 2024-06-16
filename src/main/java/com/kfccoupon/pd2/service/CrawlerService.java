@@ -36,6 +36,6 @@ public class CrawlerService {
             System.out.println("------");
 
         }
-        return null;
+        return meals;
     }
 }
