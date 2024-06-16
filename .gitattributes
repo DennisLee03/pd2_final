@@ -1,0 +1,12 @@
+# 設置所有文本文件使用 LF 作為行結尾
+* text=auto
+
+# 明確指定某些文件類型使用 LF 作為行結尾
+*.java text eol=lf
+*.properties text eol=lf
+*.xml text eol=lf
+*.sh text eol=lf
+
+# 明確指定批處理文件使用 CRLF 作為行結尾
+*.cmd text eol=crlf
+*.bat text eol=crlf
