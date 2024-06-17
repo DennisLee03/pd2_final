@@ -1,10 +1,10 @@
-package com.kfccoupon.pd2.service;
+package com.kfccoupon.pd2.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class MongoDeleteCollection {
 
     @Autowired
