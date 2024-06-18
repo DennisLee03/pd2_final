@@ -1,6 +1,6 @@
 # pd2_final
 ```
-demo
+pd2_final
 ├─ .gitignore
 ├─ .gitattributes
 ├─ .mvn
